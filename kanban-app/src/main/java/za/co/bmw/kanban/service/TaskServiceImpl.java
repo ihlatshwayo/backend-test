@@ -20,22 +20,28 @@ public class TaskServiceImpl implements TaskService {
     @Override
     @Transactional
     public List<Task> getAllTasks() {
+        List<Task> tasksList = new ArrayList<>();
+        taskRepository.findAll().forEach(tasksList::add);
+        return tasksList;
     }
 
     @Override
     @Transactional
     public Optional<Task> getTaskById(Long id) {
+        return taskRepository.findById(id);
     }
 
     @Override
     @Transactional
     public Optional<Task> getTaskByTitle(String title) {
+        return taskRepository.findByTitle(title);
     }
 
 
     @Override
     @Transactional
     public Task saveNewTask(TaskDTO taskDTO) {
+        return taskRepository.save(convertDTOToTask(taskDTO));
     }
 
     @Override
