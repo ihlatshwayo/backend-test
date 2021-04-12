@@ -34,9 +34,9 @@ public class Kanban {
             fetch = FetchType.EAGER)
     @JoinColumn(name = "kanban_id")
     @ApiModelProperty(position = 3)
-    private List<Task> tasks;
+    private List<za.co.bmw.kanban.model.Task> tasks;
 
-    public void addTask(Task task) {
+    public void addTask(za.co.bmw.kanban.model.Task task) {
 
         if (Objects.isNull(tasks)) {
             tasks = new ArrayList<>();

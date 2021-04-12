@@ -1,5 +1,6 @@
 package za.co.bmw.kanban.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import io.swagger.annotations.ApiModelProperty;
@@ -34,4 +35,7 @@ public class Task {
     @Enumerated(EnumType.STRING)
     @ApiModelProperty(position = 5)
     private TaskStatus status;
+    @JsonFormat(pattern="yyyy-MM-dd",shape= JsonFormat.Shape.STRING)
+    @Column(name="created_date")
+    private String createdDate;
 }

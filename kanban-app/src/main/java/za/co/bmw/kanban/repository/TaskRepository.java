@@ -8,6 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface TaskRepository extends CrudRepository<Task, Long> {
-
     Optional<Task> findByTitle(String title);
 }
