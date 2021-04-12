@@ -118,7 +118,7 @@ public class KanbanServiceTest {
 
         Kanban kanban= KanbanUtil.convertDTOToKanban(kanbanDTO);
 
-        Mockito.when(kanbanService.deleteKanban(kanban))
+
         Mockito.when(kanbanRepository.existsById(kanban.getId())).thenReturn(false);
 
         assertFalse(kanbanRepository.existsById(kanban.getId()));
